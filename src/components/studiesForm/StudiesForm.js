@@ -1,16 +1,13 @@
 import React from 'react'
 import "./StudiesForm.css";
-import Button from '../button/Button';
-import Input from '../input/Input';
-import Label from '../label/Label';
-import Textarea from '../textarea/Textarea';
+import { Label, Input, Button, Textarea } from "../index"
 
 export default function StudiesForm() {
     const [type, setType] = React.useState("text");
     function focus() {
         setType("date")
     }
-    
+
     const [fileName, setFileName] = React.useState('');
 
     const handleFileChange = (e) => {

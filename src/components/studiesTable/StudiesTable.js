@@ -1,9 +1,7 @@
 import React from 'react'
 import './studiesTable.css';
-import DataTable from 'react-data-table-component'
-import Input from '../input/Input';
-import Label from '../label/Label';
-import Button from '../button/Button';
+import DataTable from 'react-data-table-component';
+import { Input, Button, Label } from "../index";
 import { column, data } from './elements/Elements';
 export default function StudiesTable() {
 

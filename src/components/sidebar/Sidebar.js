@@ -1,7 +1,7 @@
 import React from 'react'
 import "./sidebar.css";
 import profilePic from "../../assets/images/logo.png";
-import SidebarButton from "../sidebarButtonComponent/SidebarButton";
+import { SidebarButton } from "../index";
 import { elements } from "./elementsArray";
 import { ImExit } from "react-icons/im";
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./dailyStudies.css";
-import StudiesTable from '../../components/studiesTable/StudiesTable';
+import { StudiesTable } from '../../components/index';
 export default function DailyStudies() {
     return (
         <div className='row dailyStudies'>

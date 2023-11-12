@@ -1,7 +1,6 @@
 import React from 'react'
 import "./home.css";
-import Sidebar from '../../components/sidebar/Sidebar';
-import Header from '../../components/header/Header';
+import { Sidebar, Header } from '../../components/index';
 
 export default function Home() {
     return (
