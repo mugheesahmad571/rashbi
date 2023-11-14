@@ -1,9 +1,9 @@
 import React from 'react'
 import "./button.css";
 import { Link } from 'react-router-dom';
-export default function Button({ route, ParentClass, buttonClass, title, linkClass }) {
+export default function Button({ route, ParentClass, buttonClass, title, linkClass, onClick }) {
     return (
-        <div className={ParentClass}>
+        <div className={ParentClass} onClick={onClick}>
             <buttton className={buttonClass}>
                 {
                     route ?
