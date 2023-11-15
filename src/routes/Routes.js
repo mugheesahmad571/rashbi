@@ -10,6 +10,7 @@ import DetailForm from "../pages/DetailForm/DetailForm";
 import PopUpNews from "../pages/PopUpNews/PopUpNews";
 import Categories from "../pages/Categories/Categories"
 import Logout from "../pages/Logout/Logout";
+import SocialForm from "../components/socialForm/SocialForm";
 
 const routes = [
     {
@@ -59,6 +60,10 @@ const routes = [
     {
         PATH: "/study-form",
         ElEMENT: <StudiesForm />
+    },
+    {
+        PATH: "/social-form",
+        ElEMENT: <SocialForm />
     },
 ];
 

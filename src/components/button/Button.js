@@ -1,6 +1,7 @@
 import React from 'react'
 import "./button.css";
 import { Link } from 'react-router-dom';
+
 export default function Button({ route, ParentClass, buttonClass, title, linkClass, onClick, disabled }) {
     return (
         <div className={ParentClass} onClick={onClick} >
@@ -8,10 +9,16 @@ export default function Button({ route, ParentClass, buttonClass, title, linkCla
                 {
                     route ?
                         <Link className={`text-decoration-none ${linkClass}`} to={route}>
+                            <span>
                             {title}
+                            {icon}
+                            </span>
                         </Link>
                         :
-                        title
+                        <span>
+                            {title}
+                            {icon}
+                        </span>
                 }
             </buttton>
         </div>
