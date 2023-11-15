@@ -6,6 +6,8 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { storage } from '../../firebase/firebaseConfig';
 import { v4 } from 'uuid';
 import { addDocument } from '../../firebase/firebaseServices';
+import { ToastContainer } from 'react-toastify';
+import { SuccessNotification, ErrorNotification } from "../notifications/Notification";
 
 export default function StudiesForm() {
     const [imageUpload, setImageUpload] = useState(null);
@@ -15,38 +17,38 @@ export default function StudiesForm() {
     const [date, setDate] = React.useState();
     const [contentType, setContentType] = React.useState("PDF");
     const [text, setText] = React.useState("");
-    const [checkImageAvailability, setCheckAvailability] = React.useState(true);
-    const [imageUrl, setImageUrl] = React.useState("");
+    const [loader, setLoader] = React.useState(false);
 
     const uploadImage = async () => {
         if (imageUpload == null) {
-            setCheckAvailability(false);
+            return;
         } else {
-            const imageRef = ref(storage, `images/${imageUpload.name + " " + v4()}`);
+            const imageRef = ref(storage, `daily-studies/${imageUpload.name + " " + v4()}`);
             try {
                 await uploadBytes(imageRef, imageUpload);
-                console.log("Image Uploaded to storage");
+                console.log("image uploaded successfully!");
                 const downloadURL = await getDownloadURL(imageRef);
-                console.error(imageUrl);
-                setImageUrl(downloadURL);
-                console.warn(imageUrl);
+                return downloadURL;
             } catch (error) {
                 console.error("Error uploading image:", error);
             }
         }
-        console.log(imageUrl);
     };
 
-    const uploadPDF = () => {
-
-        if (pdfUpload == null) {
-            alert("please upload a PDF document");
-        } else {
-            const PdfRef = ref(storage, `pdf/${pdfUpload.name + v4()}`);
-            uploadBytes(PdfRef, pdfUpload).then(() => {
-                alert("PDF Uploaded to storage");
-            })
+    const uploadPDF = async () => {
+        try {
+            if (pdfUpload == null) {
+                return;
+            } else {
+                const PdfRef = ref(storage, `daily-studies/${pdfUpload.name + v4()}`);
+                await uploadBytes(PdfRef, pdfUpload);
+                const downloadURL = await getDownloadURL(PdfRef);
+                return downloadURL;
+            }
+        } catch (e) {
+            console.error(e);
         }
+
     }
 
     const handleContentType = (e) => {
@@ -58,30 +60,68 @@ export default function StudiesForm() {
     }
 
     const addDailyStudies = async () => {
-        await uploadImage();
-        if (!title || !contentType || !date || !checkImageAvailability) {
-            alert("please fill all the required fields.")
-        }
+        try {
+            setLoader(true);
 
-        else {
-            const dataToSend = {
-                title: title,
-                contentType: contentType,
-                date: date,
-                imageUrl: imageUrl
-            }
             if (contentType === "TEXT") {
-                dataToSend.TEXT = text;
-            } else if (contentType === "PDF") {
-                uploadPDF();
+                if (!text) {
+                    ErrorNotification("Please fill all the required fields.")
+                    return;
+                }
             }
 
-            await addDocument(FIRREBASE_COLECTIONS.DAILY_STUDIES, dataToSend);
+            if (contentType === "PDF") {
+                if (!pdfUpload) {
+                    ErrorNotification("Please fill all the required fields.")
+                    return;
+                }
+            }
+
+            if (!title || !contentType || !date || !imageUpload) {
+                ErrorNotification("Please fill all the required fields.")
+            }
+            else {
+                const dataToSend = {
+                    name: title,
+                    contentType: contentType,
+                    date: date,
+                }
+                if (contentType === "TEXT") {
+                    dataToSend.studyContent = text;
+                }
+                else if (contentType === "PDF") {
+                    const pdfUrl = await uploadPDF();
+                    dataToSend.pdfLink = pdfUrl;
+                }
+
+                const imageUrl = await uploadImage();
+                if (imageUrl) {
+                    dataToSend.coverImage = imageUrl;
+                }
+                await addDocument(FIRREBASE_COLECTIONS.DAILY_STUDIES, dataToSend);
+                SuccessNotification("Data Submitted Successfully!")
+            }
+        }
+        catch (e) {
+            console.log(e);
+        } finally {
+            setLoader(false);
         }
     }
 
     return (
         <div className='selfContainer bg-form '>
+            <ToastContainer
+                position="center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                theme="light"
+            />
             <div className='row align-items-center justify-content-center '>
                 <div className='col-lg-10 my-2'>
                     <h3 className='mt-2 text-end fwt-600 poppins formHeading'>
@@ -151,7 +191,10 @@ export default function StudiesForm() {
                         < div className='col-lg-11 text-center my-5'>
                             <div className='row justify-content-center'>
                                 {
-                                    contentType === "PDF" ? <Button title="PDF להעלות" ParentClass={"col-lg-5"} buttonClass={"formBtn px-3 py-2"} onClick={addDailyStudies} /> : <Button title="העלה קובץ" ParentClass={"col-lg-5"} buttonClass={"formBtn px-3 py-2"} onClick={addDailyStudies} />
+                                    loader && <div className='loader'></div>
+                                }
+                                {
+                                    !loader && (contentType === "PDF" ? <Button title="PDF להעלות" ParentClass={"col-lg-5"} buttonClass={"formBtn px-3 py-2"} onClick={addDailyStudies} /> : <Button title="העלה קובץ" ParentClass={"col-lg-5"} buttonClass={"formBtn px-3 py-2"} onClick={addDailyStudies} />)
                                 }
                             </div>
                         </div>

@@ -3,12 +3,13 @@ import { getFirestore } from "firebase/firestore"
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAzgkOzZA53xqDj7J_PhAkaiGjNRNPnwME",
-    authDomain: "rashbi-a2b01.firebaseapp.com",
-    projectId: "rashbi-a2b01",
-    storageBucket: "rashbi-a2b01.appspot.com",
-    messagingSenderId: "883565934112",
-    appId: "1:883565934112:web:8cdd49df79e63b0c0dee45"
+    apiKey: "AIzaSyC-8X51FEnqrekm1UmAhxcgDzGZN-nI_eI",
+    authDomain: "hebrew-admin.firebaseapp.com",
+    projectId: "hebrew-admin",
+    storageBucket: "hebrew-admin.appspot.com",
+    messagingSenderId: "858534274487",
+    appId: "1:858534274487:web:54dd07d851b8ce60477432",
+    measurementId: "G-RPFBW2P8G9"
 };
 
 const app = initializeApp(firebaseConfig);
