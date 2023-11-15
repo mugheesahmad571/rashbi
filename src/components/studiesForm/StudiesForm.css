@@ -58,9 +58,10 @@
     content: url("../../assets/images/calendar.png");
     position: absolute;
     left: 8%;
-    top: -45px;
+    top: -39px;
     pointer-events: none !important;
 }
+
 .datePickerLabel {
     font-size: 18px;
 }
@@ -116,6 +117,7 @@
     color: #FFFFFF;
     transform: translateY(0) scale(0.9) !important;
 }
+
 .studiesCard::-webkit-scrollbar {
     display: none;
 }
@@ -123,4 +125,39 @@
 .studiesCard {
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+.selectOptions {
+    border: 2px solid #FECAAD;
+    border-radius: 11px;
+    cursor: pointer;
+}
+
+.selectOptions>option {
+    font-weight: 600;
+    background-color: #FECAAD;
+}
+
+.selectOptions:focus-visible {
+    outline: none;
+}
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-inline: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

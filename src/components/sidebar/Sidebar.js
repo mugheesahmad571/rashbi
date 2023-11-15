@@ -35,6 +35,7 @@ export default function Sidebar() {
                                 route={item.to}
                                 isActive={activeButton === item.to}
                                 onClick={() => handleButtonClick(item.to)}
+                                
                             />
                         )
                     })
