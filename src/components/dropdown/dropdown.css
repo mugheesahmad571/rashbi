@@ -1,8 +1,8 @@
 .dropParent {
     width: 127px;
-    height: 92px;
+    /* height: 92px; */
     position: absolute;
-    top: 30%;
+    top: -4%;
     padding-block: 0 !important;
 }
 
@@ -12,7 +12,7 @@
 
 .dropdownBtn {
     background-color: transparent;
-    border: none;
+    border: none !important;
 }
 
 .dropdownElem {
@@ -27,7 +27,7 @@
 .dropdownElem > ul {
     padding-left: 45px;
     padding-right: 8px;
-    padding-block: 10px;
+    /* padding-block: 10px; */
     margin: 0;
 }
 
@@ -41,6 +41,10 @@
     font-weight: 600;
     line-height: normal;
 }
+
+/* .dropdownElem_li {
+    padding-bottom: 10px;
+} */
 
 .hide {
     display: none;
