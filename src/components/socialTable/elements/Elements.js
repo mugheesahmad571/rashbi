@@ -15,7 +15,7 @@ const data = [
     {
         name: <Dropdown id="dropdown3" />,
         type: <span className='fileSpan'>אתר אינטרנט</span>,
-        srNo: '.2'
+        srNo: '.3'
     }
 ]
 

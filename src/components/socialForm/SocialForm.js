@@ -1,7 +1,7 @@
 import React from 'react'
 import "./socialForm.css";
-import { Label, Input, Button, Textarea } from "../index"
-import SelectField from '../select/SelectField';
+import { Label, Input, Button } from "../index"
+import { FaCheck } from "react-icons/fa6";
 
 export default function SocialForm() {
     const [type, setType] = React.useState("text");
@@ -74,8 +74,8 @@ export default function SocialForm() {
 
                         <div className='col-lg-11 text-center my-5'>
                             <div className='row justify-content-between'>
-                                <Button title="אישור" ParentClass={"col-lg-5 me-3 text-start"} buttonClass={"formBtn px-3 py-2"} />
-                                <Button title="לְבַטֵל" ParentClass={"col-lg-5 ms-3 text-end"} buttonClass={"formBtn px-3 py-2"} />
+                                <Button title="אישור" icon={<FaCheck className='approvalIcon' />} ParentClass={"col-lg-5 me-3 text-start"} buttonClass={"formBtn_1 px-3 py-2"} />
+                                <Button title="לְבַטֵל" ParentClass={"col-lg-5 ms-3 text-end"} buttonClass={"formBtn_2 px-3 py-2"} />
                             </div>
                         </div>
                     </div>

@@ -110,16 +110,24 @@
     align-items: center;
 }
 
-.formBtn {
+.formBtn_1,
+.formBtn_2 {
     border-radius: 30px;
-    background: linear-gradient(90deg, #FECDB3 0%, #FBE2D4 100%) !important;
     box-shadow: 0px 0px 4px 0px #8F8F8F;
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
 }
-
-.formBtn:hover {
+.formBtn_1{
+    background: linear-gradient(90deg, #FECDB3 0%, #FBE2D4 100%) !important;
+}
+.formBtn_2{
+    border: 1px solid #FECAAD;
+    box-shadow: 0px 0px 2px 1px rgba(254, 202, 173, 0.75);
+    padding-inline: 35px !important;
+}
+.formBtn_1:hover,
+.formBtn_2:hover {
     background: none !important;
     background-color: #000 !important;
     color: #FFFFFF;
@@ -133,6 +141,12 @@
 .socialCard {
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+.approvalIcon{
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 800 !important;
 }
 
     {/* ------------ Select field CSS ------------ */}

@@ -8,6 +8,7 @@ import Input from "./input/Input";
 import Header from "./header/Header";
 import Dropdown from "./dropdown/Dropdown"
 import Button from "./button/Button";
+import SubcategoriesTable from "./subcategories/subcategoriesTable/SubcategoriesTable";
 
 
-export { Textarea, StudiesForm, StudiesTable, Sidebar, SidebarButton, Label, Input, Header, Dropdown, Button }
+export { Textarea, StudiesForm, StudiesTable, Sidebar, SidebarButton, Label, Input, Header, Dropdown, Button, SubcategoriesTable }
