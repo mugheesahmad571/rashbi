@@ -3,17 +3,17 @@ import '../elements/element.css';
 
 const data = [
     {
-        name: <Dropdown id="dropdown1" />,
+        name: <Dropdown id="dropdown1" numberOfItems='2' title1="לַעֲרוֹך" title2="לִמְחוֹק" title3="קטגוריות משנה" />,
         type: <span className='fileSpan'>יוטיוב</span>,
         srNo: '.1'
     },
     {
-        name: <Dropdown id="dropdown2" />,
+        name: <Dropdown id="dropdown2" numberOfItems='2' title1="לַעֲרוֹך" title2="לִמְחוֹק" title3="קטגוריות משנה" />,
         type: <span className='fileSpan'>וואטסאפ</span>,
         srNo: '.2'
     },
     {
-        name: <Dropdown id="dropdown3" />,
+        name: <Dropdown id="dropdown3" numberOfItems='2' title1="לַעֲרוֹך" title2="לִמְחוֹק" title3="קטגוריות משנה" />,
         type: <span className='fileSpan'>אתר אינטרנט</span>,
         srNo: '.3'
     }

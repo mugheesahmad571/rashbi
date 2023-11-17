@@ -5,21 +5,44 @@ import { Input, Button, Label } from "../index";
 import { column, data } from './elements/Elements';
 export default function StudiesTable() {
 
+    // setTimeout(() => {
+    //     let counter = document.querySelector(".hgMgsX").innerHTML = 1;
+    //     const next = document.getElementById("pagination-next-page");
+    //     const prev = document.getElementById("pagination-previous-page");
+
+    //     next.addEventListener("click", function () {
+    //         counter = counter + 1;
+    //         document.querySelector(".hgMgsX").innerHTML = counter;
+    //     })
+
+    //     prev.addEventListener("click", function () {
+    //         counter = counter - 1;
+    //         document.querySelector(".hgMgsX").innerHTML = counter;
+    //     })
+    // }, 0);
+
     setTimeout(() => {
-        let counter = document.querySelector(".hgMgsX").innerHTML = 1;
+        let counterElement = document.querySelector(".hgMgsX");
+        let counterParent = document.querySelector(".sc-ezrdqu");
+        counterParent.appendChild(counterElement);
+        let counter = 1;
+        counterElement.innerHTML = counter;
+
         const next = document.getElementById("pagination-next-page");
         const prev = document.getElementById("pagination-previous-page");
 
         next.addEventListener("click", function () {
             counter = counter + 1;
-            document.querySelector(".hgMgsX").innerHTML = counter;
+            console.warn(counter);
+            counterElement.innerHTML = counter;
         })
 
         prev.addEventListener("click", function () {
             counter = counter - 1;
-            document.querySelector(".hgMgsX").innerHTML = counter;
+            console.warn(counter);
+            counterElement.innerHTML = counter;
         })
-    }, 0);
+    }, 300)
 
 
     return (

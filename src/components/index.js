@@ -9,6 +9,11 @@ import Header from "./header/Header";
 import Dropdown from "./dropdown/Dropdown"
 import Button from "./button/Button";
 import SubcategoriesTable from "./subcategories/subcategoriesTable/SubcategoriesTable";
+import SubcategoriesForm from "./subcategories/subcategoriesForm/SubcategoriesForm";
+import SubcategoriesSecondFrom from "./subcategories/subcategoriesForm2/SubcategoriesSecondFrom";
+import CategoriesTable from "./categories/categoriesTable/CategoriesTable";
+import CategoriesFrom from "./categories/categoriesForm/CategoriesFrom";
 
 
-export { Textarea, StudiesForm, StudiesTable, Sidebar, SidebarButton, Label, Input, Header, Dropdown, Button, SubcategoriesTable }
+export { Textarea, StudiesForm, StudiesTable, Sidebar, SidebarButton, Label, Input, Header, Dropdown, 
+         Button, SubcategoriesTable, SubcategoriesForm, SubcategoriesSecondFrom, CategoriesTable, CategoriesFrom }
