@@ -11,7 +11,7 @@ import PopUpNews from "../pages/PopUpNews/PopUpNews";
 import Categories from "../pages/Categories/Categories"
 import Logout from "../pages/Logout/Logout";
 import SocialForm from "../components/socialForm/SocialForm";
-import { CategoriesFrom, SubcategoriesForm, SubcategoriesSecondFrom } from "../components";
+import { CategoriesFrom, ConsultationForm, SubcategoriesForm, SubcategoriesSecondFrom } from "../components";
 
 const routes = [
     {
@@ -77,6 +77,10 @@ const routes = [
     {
         PATH: "/category-form",
         ElEMENT: <CategoriesFrom />
+    },
+    {
+        PATH: "/consultation-form",
+        ElEMENT: <ConsultationForm />
     },
 ];
 

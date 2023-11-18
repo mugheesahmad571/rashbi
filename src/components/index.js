@@ -13,7 +13,10 @@ import SubcategoriesForm from "./subcategories/subcategoriesForm/SubcategoriesFo
 import SubcategoriesSecondFrom from "./subcategories/subcategoriesForm2/SubcategoriesSecondFrom";
 import CategoriesTable from "./categories/categoriesTable/CategoriesTable";
 import CategoriesFrom from "./categories/categoriesForm/CategoriesFrom";
-
+import ConsultationTable from "./consultation/consultationTable/ConsultationTable";
+import ConsultationForm from "./consultation/consultationForm/ConsultationForm";
+import RequestTable from "./requests/requestTable/RequestTable";
 
 export { Textarea, StudiesForm, StudiesTable, Sidebar, SidebarButton, Label, Input, Header, Dropdown, 
-         Button, SubcategoriesTable, SubcategoriesForm, SubcategoriesSecondFrom, CategoriesTable, CategoriesFrom }
+         Button, SubcategoriesTable, SubcategoriesForm, SubcategoriesSecondFrom, CategoriesTable, CategoriesFrom,
+         ConsultationTable, ConsultationForm, RequestTable }
