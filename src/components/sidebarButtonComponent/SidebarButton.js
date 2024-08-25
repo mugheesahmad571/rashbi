@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import "./sidebarButton.css";
 import { Link } from 'react-router-dom';
 
@@ -13,6 +13,6 @@ export default function SidebarButton({ route, title, icon, isActive, onClick })
                     <span className={`icon text-dark ${isActive ? 'activeText' : ''}`}>{icon}</span>
                 </div>
             </div>
-        </Link >
-    )
+        </Link>
+    );
 }

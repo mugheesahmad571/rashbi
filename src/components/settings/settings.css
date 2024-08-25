@@ -13,10 +13,9 @@
     overflow-y: scroll !important;
 }
 
-.categoryContainer {
-    width: 100%;
+.settingContainer {
     height: fit-content !important;
-
+    width: 100% !important;
 }
 
 .category_formHeading {

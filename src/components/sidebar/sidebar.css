@@ -1,5 +1,5 @@
 .sidebar {
-    max-height: 100vh;
+    height: 100vh;
     background-color: #FECAAD !important;
     overflow-y: scroll;
 }
@@ -19,7 +19,7 @@
 }
 
 .logOutRow {
-    height: 20vh;
+    height: 22vh;
 }
 
 @media screen and (min-width:1440px) {

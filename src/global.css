@@ -1,6 +1,11 @@
 body {
     overflow: hidden !important;
     height: 100vh;
+    background-image: url('../src/assets/images/cardBg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fec9ad2d;
 }
 .fwt-700 {
     font-weight: 700;

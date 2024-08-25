@@ -22,7 +22,7 @@ export default function Settings() {
     };
 
     return (
-        <div className='categoryContainer category_bg_form '>
+        <div className='settingContainer category_bg_form '>
             <div className='row align-items-center justify-content-center '>
                 <div className='col-lg-10 my-2'>
                     <h3 className='mt-2 text-end fwt-600 poppins category_formHeading'>
