@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rashbi/static/css/main.d419a685.css",
+    "main.js": "/rashbi/static/js/main.720a3f85.js",
+    "static/media/cardBg.png": "/rashbi/static/media/cardBg.eb6e31db21ecaed0f035.png",
+    "static/media/logo.png": "/rashbi/static/media/logo.9ddba74a18e7d449e466.png",
+    "index.html": "/rashbi/index.html",
+    "main.d419a685.css.map": "/rashbi/static/css/main.d419a685.css.map",
+    "main.720a3f85.js.map": "/rashbi/static/js/main.720a3f85.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d419a685.css",
+    "static/js/main.720a3f85.js"
+  ]
+}
